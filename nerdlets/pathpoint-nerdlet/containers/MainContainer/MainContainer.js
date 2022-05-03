@@ -1362,16 +1362,14 @@ export default class MainContainer extends React.Component {
         (amount = Math.abs(Number(amount) || 0).toFixed(decimalCount))
       ).toString();
       const j = i.length > 3 ? i.length % 3 : 0;
-      return `${amount < 0 ? '-' : ''}$${
-        j ? i.substr(0, j) + thousands : ''
-      }${i.substr(j).replace(/(\d{3})(?=\d)/g, `$1${thousands}`)}${
-        decimalCount
+      return `${amount < 0 ? '-' : ''}$${j ? i.substr(0, j) + thousands : ''
+        }${i.substr(j).replace(/(\d{3})(?=\d)/g, `$1${thousands}`)}${decimalCount
           ? decimal +
-            Math.abs(amount - i)
-              .toFixed(decimalCount)
-              .slice(2)
+          Math.abs(amount - i)
+            .toFixed(decimalCount)
+            .slice(2)
           : ''
-      }`;
+        }`;
     } catch (e) {
       DisplayConsole('error', `Error in format money ${e}`);
     }
@@ -1951,8 +1949,8 @@ export default class MainContainer extends React.Component {
                       )}
                     >
                       {element.money_enabled |
-                      iconGoutStatus |
-                      iconFireStatus ? (
+                        iconGoutStatus |
+                        iconFireStatus ? (
                         <div>
                           {this.renderContentAboveStep(
                             element.money_enabled,

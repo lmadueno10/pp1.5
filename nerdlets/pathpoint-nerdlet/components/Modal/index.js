@@ -27,7 +27,11 @@ const Modal = props => {
       </BootstrapModal.Header>
       <BootstrapModal.Body>
         <div className="containModal">
-          <ShowBody {...props} />
+          <ShowBody
+            {...props}
+            HandleCredentialsFormChange={() => { }}
+            resetCredentials={() => { }}
+            handleSaveUpdateGeneralConfiguration={() => { }} />
         </div>
       </BootstrapModal.Body>
     </BootstrapModal>

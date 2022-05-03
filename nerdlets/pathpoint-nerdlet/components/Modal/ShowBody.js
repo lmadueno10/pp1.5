@@ -192,6 +192,12 @@ export default class ShowBody extends Component {
         return (
           <BodyGeneralConfigurationFormModal
             {...this.props}
+            ValidateIngestLicense={() => { }}
+            ToggleEnableSubmit={() => { }}
+            ValidateUserApiKey={() => { }}
+            credentialsData={{}}
+            disableGeneralConfigurationSubmit={false}
+            installUpdateBackgroundScripts={() => { }}
             handleOnChange={this.props.HandleCredentialsFormChange}
             handleFormSubmit={this.props.handleSaveUpdateGeneralConfiguration}
             resetCredentials={this.props.resetCredentials}

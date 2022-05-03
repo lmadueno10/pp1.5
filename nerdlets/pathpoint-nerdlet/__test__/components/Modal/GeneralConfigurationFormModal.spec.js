@@ -7,7 +7,6 @@ import { create } from 'react-test-renderer';
 
 describe('<GeneralConfigurationFormModal/>', () => {
   it('BodyGeneralConfiguration Component', () => {
-    const toggleEnableSubmit = jest.fn();
     const component = create(
       <BodyGeneralConfigurationFormModal
         stageNameSelected={{
@@ -22,15 +21,15 @@ describe('<GeneralConfigurationFormModal/>', () => {
         }}
         handleOnChange={jest.fn()}
         handleFormSubmit={jest.fn()}
-        credentialsData={jest.fn().mockReturnValue({
+        credentialsData={{
           ingestLicense: true,
           userAPIKey: true
-        })}
+        }}
         resetCredentials={jest.fn()}
         ValidateIngestLicense={jest.fn()}
         licenseValidations={{ ingestLicense: false, userApiKey: false }}
         ValidateUserApiKey={jest.fn()}
-        ToggleEnableSubmit={toggleEnableSubmit}
+        ToggleEnableSubmit={jest.fn()}
         disableGeneralConfigurationSubmit={false}
         installUpdateBackgroundScripts={jest.fn()}
       />

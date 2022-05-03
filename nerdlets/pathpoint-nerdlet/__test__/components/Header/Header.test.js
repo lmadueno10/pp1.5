@@ -242,6 +242,7 @@ describe('<Header/>', () => {
     });
 
     it('Kpi click to open link', () => {
+      window.open = jest.fn();
       const header = mount(
         <Header
           iconSixthSenseStatus={false}

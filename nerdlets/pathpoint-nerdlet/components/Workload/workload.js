@@ -8,7 +8,7 @@ const Workload = ({ workloadWidth, workloadValue }) => {
     const pathWorkload = `M ${arrowHead * i + (i - 1) * workloadWidth} 0 L ${i *
       workloadWidth +
       arrowHead * i} 0 L ${i * workloadWidth + arrowHead * (i - 1)} 13 L ${(i -
-      1) *
+        1) *
       workloadWidth +
       arrowHead * (i - 1) +
       0} 13 Z`;
@@ -20,6 +20,7 @@ const Workload = ({ workloadWidth, workloadValue }) => {
         if (workloadValue === 0) {
           return (
             <path
+              key={index}
               id="arrow"
               d={workload}
               stroke="#BDBDBD"
@@ -30,6 +31,7 @@ const Workload = ({ workloadWidth, workloadValue }) => {
         } else if (index < workloadValue) {
           return (
             <path
+              key={index}
               id="arrow"
               d={workload}
               stroke="#0aaf77"
@@ -40,6 +42,7 @@ const Workload = ({ workloadWidth, workloadValue }) => {
         } else {
           return (
             <path
+              key={index}
               id="arrow"
               d={workload}
               stroke="#e3e6e8"

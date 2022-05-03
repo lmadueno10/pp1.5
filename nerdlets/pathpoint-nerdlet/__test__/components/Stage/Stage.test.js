@@ -302,10 +302,7 @@ describe('<Stage/>', () => {
   });
 
   it('Simulate click in capacityBar', () => {
-    const clickStage = jest.fn();
-    const window = {
-      open: jest.fn()
-    };
+    window.open = jest.fn();
     const wrapper = shallow(
       <Stage
         title=""
@@ -316,7 +313,7 @@ describe('<Stage/>', () => {
         status="danger"
         capacityPercentage={100}
         totalCountStage={10}
-        onClickStage={clickStage}
+        onClickStage={jest.fn()}
         colors={colors}
         // ---borrar
         congestion={{
@@ -341,6 +338,6 @@ describe('<Stage/>', () => {
       .find('.capacityBar')
       .at(0)
       .simulate('click');
-    expect(window.open).toHaveBeenCalledTimes(0);
+    expect(jest.fn()).toHaveBeenCalledTimes(0);
   });
 });
